@@ -4,7 +4,7 @@ This repository provides an end-to-end framework for deploying OpenCTI and nativ
 
 ![alt text](image.png)
 
-![alt text](image-2.png)
+<img width="843" height="1915" alt="Screenshot 2026-04-06 135107" src="https://github.com/user-attachments/assets/b443fae5-8cad-43b2-8414-2eb9463d8998" />
 
 ## Folder Structure
 
