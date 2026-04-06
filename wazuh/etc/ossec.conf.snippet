@@ -1,0 +1,14 @@
+<!-- Add this inside <ossec_config> in your ossec.conf -->
+  
+  <integration>
+    <name>custom-opencti</name>
+    <api_key>YOUR_OPENCTI_ADMIN_TOKEN</api_key>
+    <hook_url>http://YOUR_OPENCTI_IP:8080/graphql</hook_url>
+    <group>sysmon_event3,syscheck,ids,firewall,dns,sshd</group>
+    <alert_format>json</alert_format>
+  </integration>
+  
+  <localfile>
+    <log_format>json</log_format>
+    <location>/var/ossec/logs/opencti.log</location>
+  </localfile>
