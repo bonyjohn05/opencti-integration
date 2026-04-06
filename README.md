@@ -10,6 +10,7 @@ This repository provides an end-to-end framework for deploying OpenCTI and nativ
 
 - `docker/` - Contains the sample `docker-compose.yml` and `.env` template for deploying OpenCTI.
 - `wazuh/integrations/custom-opencti.py` - The Python script to query the OpenCTI GraphQL API.
+- `wazuh/integrations/custom-opencti` - The shell wrapper script required by Wazuh to execute the Python script.
 - `wazuh/etc/ossec.conf.snippet` - The configuration blocks to add to `/var/ossec/etc/ossec.conf`.
 - `wazuh/rules/opencti.xml` - Custom Wazuh decoder/rule definitions to trigger alerts.
 
@@ -31,12 +32,12 @@ Launch the OpenCTI cluster and its TI connectors (URLHaus, AlienVault, ThreatFox
 
 The Python script receives alert data directly from Wazuh, extracts standard observable fields (like `srcip`, `md5`, `domain`), and queries OpenCTI's GraphQL API. 
 
-1. Copy `wazuh/integrations/custom-opencti.py` to `/var/ossec/integrations/`.
+1. Copy both `wazuh/integrations/custom-opencti` and `wazuh/integrations/custom-opencti.py` to `/var/ossec/integrations/`.
 2. Edit `/var/ossec/integrations/custom-opencti.py` and ensure `YOUR_OPENCTI_IP` points to your deployment.
-3. Set the correct permissions so the Wazuh user can execute it:
+3. Set the correct permissions so the Wazuh user can execute both scripts:
    ```bash
-   chown root:ossec /var/ossec/integrations/custom-opencti.py
-   chmod 750 /var/ossec/integrations/custom-opencti.py
+   chown root:ossec /var/ossec/integrations/custom-opencti*
+   chmod 750 /var/ossec/integrations/custom-opencti*
    ```
 
 ## 3. Configuring Wazuh (ossec.conf)
