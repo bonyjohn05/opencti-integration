@@ -14,7 +14,7 @@ This repository provides an end-to-end framework for deploying OpenCTI and nativ
 - `wazuh/etc/ossec.conf.snippet` - The configuration blocks to add to `/var/ossec/etc/ossec.conf`.
 - `wazuh/rules/opencti.xml` - Custom Wazuh decoder/rule definitions to trigger alerts.
 
-## 1. OpenCTI Deployment
+## 1. [OpenCTI Deployment](https://docs.opencti.io/5.7.X/deployment/installation/#using-docker)
 
 Launch the OpenCTI cluster and its TI connectors (URLHaus, AlienVault, ThreatFox, MITRE).
 
