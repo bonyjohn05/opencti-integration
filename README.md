@@ -75,4 +75,4 @@ echo '{"integration":"opencti","event_type":"threat_intel","timestamp":"2026-04-
 You should see it output: `**Alert to be generated` for Rule 100701.
 
 ---
-**Security Notice:** Ensure all internal API keys and OpenCTI credentials are kept secure and rotated effectively. Do NOT commit the modified `.env` directly unless it's a private repository.
+
